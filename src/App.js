@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes, useLocation } from 'react-router-dom';
+import Navbar from './components/Navbar/Navbar';
+import Birds from './pages/Birds/Birds';
+import Home from './pages/Home/Home';
+import Hunters from './pages/Hunters/Hunters';
+
+// import {} from 'framer-motion/dist/framer-motion';
+import { AnimatePresence } from 'framer-motion';
+import Footer from './components/Footer/Footer';
 
 function App() {
+
+  const location = useLocation();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      <AnimatePresence>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Home />}/>
+          <Route path="/birds" element={<Birds />}/>
+          <Route path="/ocean" element={<Hunters />}/>
+        </Routes>
+      </AnimatePresence>
+     <Footer />
     </div>
   );
 }

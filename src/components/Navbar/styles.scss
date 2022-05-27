@@ -1,0 +1,36 @@
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: rgba(0,0,0,.8);
+    display: flex;
+    z-index: 100;
+
+    &__logo img{
+        width: 140px;
+        display: block;
+    }
+
+    &__links{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        a{
+            color: #fff;
+            padding: 8px 15px;
+            font-size: 1.3rem;
+        }
+    }
+}
+
+.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
