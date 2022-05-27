@@ -1,22 +1,31 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import image from '../../assets/hunters/hunters.jpeg';
 import { fadeFromBottom, staggerdAnimation } from '../../libraries/animations/textVariants';
+import { pageFadeIn } from '../../libraries/animations/pagesVarients';
+
+import image from '../../assets/hunters/hunters.jpeg';
+import articleImage from '../../assets/nature/cub.jpeg';
+import Article from '../../components/Article/Article';
 
 function Home() {
   return (
     <motion.section className="main" style={{ backgroundImage: `url(${image})`}}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { duration: 0.6 } }}
-      exit={{ opacity: 0 , transition: { duration: 0.3 }}}
+      variants={pageFadeIn}
+      initial="initial"
+      animate="animate"
+      exit="exit"
     >
-        <motion.div className="wrapper" variants={staggerdAnimation} initial="initial" animate="animate">
-            <header className="hero">
+        <div className="wrapper">
+            <motion.header className="hero" variants={staggerdAnimation} initial="initial" animate="animate">
                 <motion.h1 variants={fadeFromBottom} >Cats</motion.h1>
-                <motion.p variants={fadeFromBottom} >Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, quisquam! Ipsam labore asperiores minima dolorum ad voluptate ut maxime hic officiis! Impedit quam a, amet laudantium maiores deserunt explicabo eum.
-            </motion.p>
-            </header>
-        </motion.div>
+                <motion.p variants={fadeFromBottom} >
+                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi, quisquam! Ipsam labore asperiores minima dolorum ad voluptate ut maxime hic officiis! Impedit quam a, amet laudantium maiores deserunt explicabo eum.
+                </motion.p>
+            </motion.header>
+        </div>
+        {/* <div className='content'>
+          <Article heading="Tigers are so cool" image={articleImage}/>
+        </div> */}
     </motion.section>
   )
 }

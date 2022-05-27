@@ -2,14 +2,16 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import image from '../../assets/birds/birds.jpg';
 
-import { staggerdAnimation, fadeFromBottom } from '../../libraries/animations/textVariants'
+import { staggerdAnimation, fadeFromBottom } from '../../libraries/animations/textVariants';
+import { pageFadeIn } from '../../libraries/animations/pagesVarients';
 
 function Birds() {
   return (
     <motion.section className="main" style={{ backgroundImage: `url(${image})`}}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1, transition: { duration: 0.6 } }}
-      exit={{ opacity: 0 , transition: { duration: 0.3 }}}
+      variants={pageFadeIn}
+      initial="initial"
+      animate="animate"
+      exit="exit"
     >
         <motion.div className="wrapper" variants={staggerdAnimation} initial="initial" animate="animate">
             <header className="hero">

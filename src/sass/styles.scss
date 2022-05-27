@@ -3,7 +3,9 @@
     min-height: 100vh;
     width: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -11,6 +13,8 @@
     .hero{
         padding: 40px 0;
         max-width: 500px;
+        min-height: 50vh;
+        margin: 40vh 0 20vh;
 
         h1{
             font-size: 80px;
@@ -21,8 +25,51 @@
         }
     }
 }
+.article{
+    position: relative;
+    // min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    &__content{
+        background: rgba(0,0,0,.5);
+        padding: 30px;
+        line-height: 1.5;
+    }
+}
 .wrapper{
     width: 90%;
     max-width: 1000px;
     margin: auto;
+}
+.content{
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+.footer{
+    position: relative;
+    min-height: 100px;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .content{
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    a{
+        color: #fff;
+        font-size: 1.2rem;
+    }
+
+    p{
+        font-size: 1.2rem;
+        padding-bottom: 30px;
+    }
 }

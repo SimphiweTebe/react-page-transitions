@@ -3,7 +3,7 @@
 export const fadeFromBottom = {
     initial: {
         opacity: 0,
-        y: 40
+        y: 80
     },
     animate: {
         opacity: 1,
@@ -20,7 +20,7 @@ export const staggerdAnimation = {
     animate: {
         transition: {
             staggerChildren: 0.5,
-            delayChildren: 0.5
+            delayChildren: 0.8
         }
     },
 }
