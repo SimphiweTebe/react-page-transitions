@@ -10,7 +10,7 @@ export const fadeFromBottom = {
         y: 0,
         transition: {
             duration: 0.5,
-            ease: 'easeInOut'
+            ease: 'easeIn'
         }
     },
 }
@@ -19,7 +19,7 @@ export const staggerdAnimation = {
     initial: {},
     animate: {
         transition: {
-            staggerChildren: 0.5,
+            staggerChildren: 0.1,
             delayChildren: 0.8
         }
     },

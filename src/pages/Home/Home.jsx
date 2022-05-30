@@ -1,13 +1,26 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+
 import { fadeFromBottom, staggerdAnimation } from '../../libraries/animations/textVariants';
 import { pageFadeIn } from '../../libraries/animations/pagesVarients';
+import { slideFromLeft } from '../../libraries/animations/contentVariants';
 
 import image from '../../assets/hunters/hunters.jpeg';
-import articleImage from '../../assets/nature/cub.jpeg';
-import Article from '../../components/Article/Article';
 
 function Home() {
+
+  const { ref, inView } = useInView();
+  const animation = useAnimation();
+
+  React.useEffect(()=>{
+    // if(inView){
+    //   animation.start(slideFromLeft.animate)
+    // }
+    inView ?  animation.start(slideFromLeft.animate) : animation.start(slideFromLeft.initial);
+  },[inView]);
+
+
   return (
     <motion.section className="main" style={{ backgroundImage: `url(${image})`}}
       variants={pageFadeIn}
@@ -23,9 +36,6 @@ function Home() {
                 </motion.p>
             </motion.header>
         </div>
-        {/* <div className='content'>
-          <Article heading="Tigers are so cool" image={articleImage}/>
-        </div> */}
     </motion.section>
   )
 }
